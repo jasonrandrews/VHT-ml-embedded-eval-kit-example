@@ -30,7 +30,13 @@ Use the menu to run the application.
 
 ### Change the number of MACs.
 
-Different devices contain different configurations of the Ethos-U55. The default value for number of 8x8 MACs performed per cycle is 128. To change to 64 use the ethosu.num_macs parameter
+Different devices contain different configurations of the Ethos-U55. The default value for number of 8x8 MACs performed per cycle is 128. The number of MACs must be changed in the software build and the run and the values must match. 
+
+To change to 64 MACs:
+```
+$ ./build_software.sh 64
+$ ./run.sh 64
+```
 
 ### Use GUI or batch mode
 
