@@ -6,7 +6,7 @@ To get started launch the Arm Virtual Harware Amazon Machine Image AMI in AWS
 
 The [documentation](https://arm-software.github.io/VHT/main/overview/html/index.html) provides an overview of Arm Virtual Hardware.
 
-Connect to the AMI using the methods described in the documenation section [Connect to the EC2 Instance](https://arm-software.github.io/VHT/main/infrastructure/html/vht_aws.html#connect)
+Connect to the AMI using the methods described in the documenation section [Connect to the EC2 Instance](https://arm-software.github.io/VHT/main/infrastructure/html/run_ami_local.html#connect)
 
 Once connected, build and run the application.
 
