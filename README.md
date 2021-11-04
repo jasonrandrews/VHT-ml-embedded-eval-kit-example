@@ -10,7 +10,7 @@ Connect to the AMI using the methods described in the documenation section [Conn
 
 Once connected, build and run the application.
 
-### Build the example software
+### Build the example applications
 
 ```bash
 $ ./build_software.sh
@@ -34,8 +34,16 @@ Different devices contain different configurations of the Ethos-U55. The default
 
 To change to 64 MACs:
 ```
-$ ./build_software.sh 64
-$ ./run.sh 64
+$ ./build_software.sh -n 64
+$ ./run.sh -n 64
+```
+
+### Change the compiler
+
+The default compiler is GNU gcc. To change to the Arm Compiler (armclang):
+```
+$ ./build_software.sh -t arm
+$ ./run -t arm
 ```
 
 ### Use GUI or batch mode

@@ -1,13 +1,17 @@
 #!/bin/bash
 
-# Ethos-U55 supports 32, 64, 128, or 256 8x8 MAC units
-if [ $# -eq 1 ]
-then
-    NUM_MACS=$1
+mydir="$(dirname $0)"
+
+. $mydir/cmd.sh
+
+APP=ml-embedded-evaluation-kit/cmake-build-mps3-sse-300-ethos-u55-${NUM_MACS}-${TOOLCHAIN}/bin/ethos-u-img_class.axf
+
+# specify compiler to use
+if [ -f $APP ]; then
+    FVP_Corstone_SSE-300_Ethos-U55 -f FVP_config.txt -C ethosu.num_macs=${NUM_MACS} -a $APP
 else
-    NUM_MACS=128 # default value
+    echo "Cannot file image classification application for $TOOLCHAIN and $NUM_MACS macs"
+    echo "Looking for $APP"
 fi
 
-echo "Number of MACs is $NUM_MACS"
 
-FVP_Corstone_SSE-300_Ethos-U55 -f FVP_config.txt -C ethosu.num_macs=${NUM_MACS} -a ml-embedded-evaluation-kit/build/bin/ethos-u-img_class.axf
